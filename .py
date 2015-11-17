@@ -8,11 +8,11 @@ def has_num(inputString):
 
 def create_ciphertext_alphabet_from(key):
 	ciphertext_alphabet = alphabet
-	for item in range(0,len(key)):
-		key.append(ciphertext_alphabet[i])
-		key.pop(key[i])
+	for i in range(0,len(key)):
+		index = ciphertext_alphabet.index(key[i])
+		ciphertext_alphabet.append(key[i])
+		ciphertext_alphabet.pop(index)
 	return ciphertext_alphabet
-
 
 def valid_key(key)
 	if has_num(key) == True:
