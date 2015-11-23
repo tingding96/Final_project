@@ -19,3 +19,9 @@ def valid_key(key):
     		print("Not a valid key, please try again. Key can only contain letters.")
 	else:
      		print("Valid key: Please enter the phrase you would like to encrypt")
+     		
+def encrypt(word):
+	newword = []
+	for item in word:
+		newword.append(ciphertext_alphabet[alphabet.index(item)])
+	return "".join(newword)
