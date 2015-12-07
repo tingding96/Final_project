@@ -1,26 +1,26 @@
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+def is_prime(number):
+	for i in range(2,number):
+		if number % i == 0:
+			return False
+		else:
+			return True
+	
+import random
+p = random.randint(5000,10000)
+while is_prime(p) == False:
+	p = random.randint(5000,10000)
 
-key = input("Please choose an encryption key. Key can only contain letters: ")
+q = random.randint(5000,10000)
+while is_prime(q) == False:
+	q = random.randint(5000,10000)
 
-def has_num(inputString):
-	return any(char.isdigit() for char in inputString)
+n = p * q
 
-def create_ciphertext_alphabet_from(key):
-	ciphertext_alphabet = alphabet
-	for i in range(0,len(key)):
-		index = ciphertext_alphabet.index(key[i])
-		ciphertext_alphabet.append(key[i])
-		ciphertext_alphabet.pop(index)
-	return ciphertext_alphabet
+totient = (p - 1) * (q - 1)
 
-def valid_key(key):
-	if any((c in symbols) for c in key):
-    		print("Not a valid key, please try again. Key can only contain letters.")
-	else:
-     		print("Valid key: Please enter the phrase you would like to encrypt")
-     		
-def encrypt(word):
-	newword = []
-	for item in word:
-		newword.append(ciphertext_alphabet[alphabet.index(item)])
-	return "".join(newword)
+import math
+e = random.randint(1,totient)
+while is_prime(e) == False:
+	e = random.randint(1,totient)
+
+d = 1.0 / (e % totient)
