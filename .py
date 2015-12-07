@@ -38,3 +38,20 @@ def translate(phrase, ciphertext_alphabet):
 		elif item.isalpha():
 			newphrase.append(encrypt_letter(item))
 	return "".join(newphrase)
+	
+key = raw_input("Please choose an encryption key. Key can only contain letters: ")
+while valid_key(key) == False:
+	key = raw_input("Key can only contain letters, try again: ")
+
+print("Your key is " + key)
+
+ciphertext_alphabet = create_ciphertext_alphabet(key)
+
+"""if valid_key(key) == True:
+	print ("Valid key")
+else:
+	print ("Key can only contain letters, try again")"""
+
+phrase = raw_input("What phrase would you like to encrypt?: ")
+
+print(translate(phrase, ciphertext_alphabet))
