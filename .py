@@ -15,10 +15,10 @@ def create_ciphertext_alphabet(key):
 	return ciphertext_alphabet
 
 def valid_key(key):
-	if any((c in symbols) for c in key):
-    		print("Not a valid key, please try again. Key can only contain letters.")
-	else:
-     		print("Valid key: Please enter the phrase you would like to encrypt")
+	for letter in key:
+		if letter.isalpha() == False:
+			return False
+	return True
      		
 def encrypt(word, ciphertext_alphabet):
 	newword = []
