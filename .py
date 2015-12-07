@@ -26,6 +26,9 @@ def encrypt(word):
 		newword.append(ciphertext_alphabet[alphabet.index(item)])
 	return "".join(newword)
 	
+def encrypt_letter(letter):
+	return (ciphertext_alphabet[alphabet.index(letter)])
+	
 def translate(phrase):
 	newphrase = []
 	lowercase = phrase.lower()
