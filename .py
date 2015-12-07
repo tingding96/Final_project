@@ -25,3 +25,13 @@ def encrypt(word):
 	for item in word:
 		newword.append(ciphertext_alphabet[alphabet.index(item)])
 	return "".join(newword)
+	
+def translate(phrase):
+	newphrase = []
+	lowercase = phrase.lower()
+	for item in lowercase:
+		if item == " ":
+			newphrase.append(" ")
+		elif item.isalpha():
+			newphrase.append(encrypt_letter(item))
+	return "".join(newphrase)
