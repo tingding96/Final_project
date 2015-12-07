@@ -6,8 +6,8 @@ key = input("Please choose an encryption key. Key can only contain letters: ")
 def has_num(inputString):
 	return any(char.isdigit() for char in inputString)
 
-def create_ciphertext_alphabet_from(key):
-	ciphertext_alphabet = alphabet
+def create_ciphertext_alphabet(key):
+	ciphertext_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 	for i in range(0,len(key)):
 		index = ciphertext_alphabet.index(key[i])
 		ciphertext_alphabet.append(key[i])
@@ -20,16 +20,16 @@ def valid_key(key):
 	else:
      		print("Valid key: Please enter the phrase you would like to encrypt")
      		
-def encrypt(word):
+def encrypt(word, ciphertext_alphabet):
 	newword = []
 	for item in word:
 		newword.append(ciphertext_alphabet[alphabet.index(item)])
 	return "".join(newword)
 	
-def encrypt_letter(letter):
+def encrypt_letter(letter, ciphertext_alphabet):
 	return (ciphertext_alphabet[alphabet.index(letter)])
 	
-def translate(phrase):
+def translate(phrase, ciphertext_alphabet):
 	newphrase = []
 	lowercase = phrase.lower()
 	for item in lowercase:
